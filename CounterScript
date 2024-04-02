@@ -1,0 +1,19 @@
+// ==UserScript==
+// @name         Reddit r/Counter April Fools Day 2024 Refresher
+// @namespace    http://tampermonkey.net/
+// @version      2024-04-01
+// @description  Automatically refreshes the counter
+// @author       Daaniea
+// @match        https://www.reddit.com/r/Counter/comments/1bt8fw3/counter/
+// @icon         https://icons.duckduckgo.com/ip2/reddit.com.ico
+// ==/UserScript==
+
+(function() {
+    'use strict';
+    let zoomed = false;
+    const post = document.querySelector('shreddit-devvit-ui-loader');
+    setInterval(() => {
+        post.style.marginRight = zoomed ? "" : "0.02px";
+        zoomed = !zoomed;
+    }, 1000);
+})();
